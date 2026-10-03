@@ -1,0 +1,146 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.experience {
+  background-color: $color-background;
+}
+
+.experience__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.experience__header {
+  max-width: 680px;
+}
+
+.experience__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.experience__title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.experience__intro {
+  max-width: 650px;
+  color: $color-text-light;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.experience__list {
+  position: relative;
+  display: grid;
+  gap: $space-md;
+  max-width: 900px;
+  padding-left: 1.5rem;
+}
+
+.experience__list::before {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.35rem;
+  width: 2px;
+  background-color: $color-border;
+  content: "";
+}
+
+.experience__item {
+  position: relative;
+  display: grid;
+  gap: $space-sm;
+  padding: $space-md;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-surface;
+  box-shadow: 0 3px 10px rgb(31 58 95 / 6%);
+}
+
+.experience__item::before {
+  position: absolute;
+  top: 1.4rem;
+  left: -1.82rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 3px solid $color-surface;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  box-shadow: 0 0 0 2px $color-secondary;
+  content: "";
+}
+
+.experience__period {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.experience__company {
+  color: $color-primary;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.experience__role {
+  margin-bottom: $space-xs;
+  color: $color-text;
+  font-size: 1.1rem;
+}
+
+.experience__tasks {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.experience__task {
+  color: $color-text-light;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@include respond-to(tablet) {
+  .experience__list {
+    padding-left: 2rem;
+  }
+
+  .experience__item {
+    grid-template-columns: minmax(150px, 0.5fr) minmax(0, 1.5fr);
+    gap: $space-md;
+    padding: $space-md;
+  }
+
+  .experience__item::before {
+    left: -2.32rem;
+  }
+
+  .experience__intro {
+    font-size: 1rem;
+  }
+}
+
+@include respond-to(desktop) {
+  .experience__content {
+    gap: $space-lg;
+  }
+
+  .experience__list {
+    gap: $space-lg;
+  }
+
+  .experience__item {
+    padding: $space-md;
+  }
+}

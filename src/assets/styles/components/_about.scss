@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.about {
+  background-color: $color-surface;
+}
+
+.about__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.about__header {
+  max-width: 800px;
+}
+
+.about__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about__title {
+  color: $color-primary;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.about__body {
+  display: grid;
+  gap: $space-md;
+  max-width: 800px;
+}
+
+.about__text {
+  color: $color-text-light;
+  font-size: 1.05rem;
+}
+
+@include respond-to(tablet) {
+  .about__content {
+    gap: $space-xl;
+  }
+
+  .about__text {
+    font-size: 1.125rem;
+  }
+}
+
+@include respond-to(desktop) {
+  .about__content {
+    grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+    align-items: start;
+  }
+
+  .about__body {
+    max-width: 700px;
+  }
+}

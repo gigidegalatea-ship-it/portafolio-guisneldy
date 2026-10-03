@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.education {
+  background-color: $color-surface;
+}
+
+.education__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.education__header {
+  max-width: 680px;
+}
+
+.education__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.education__title {
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.education__list {
+  display: grid;
+  gap: $space-md;
+  max-width: 900px;
+}
+
+.education__item {
+  padding: $space-md;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-background;
+  box-shadow: 0 3px 10px rgb(31 58 95 / 6%);
+}
+
+.education__period {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.education__degree {
+  margin-bottom: $space-xs;
+  color: $color-primary;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.education__detail {
+  color: $color-text-light;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@include respond-to(tablet) {
+  .education__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

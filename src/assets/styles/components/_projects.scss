@@ -1,0 +1,104 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.projects {
+  background-color: $color-surface;
+}
+
+.projects__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.projects__header {
+  max-width: 680px;
+}
+
+.projects__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.projects__title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.projects__intro {
+  color: $color-text-light;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.projects__grid {
+  display: grid;
+  gap: $space-md;
+  max-width: 1000px;
+}
+
+.projects__card {
+  display: flex;
+  flex-direction: column;
+  padding: $space-md;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-background;
+  box-shadow: 0 3px 10px rgb(31 58 95 / 6%);
+}
+
+.projects__number {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.projects__card-title {
+  margin-bottom: $space-xs;
+  color: $color-primary;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.projects__card-text {
+  margin-bottom: $space-md;
+  color: $color-text-light;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.projects__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-top: auto;
+}
+
+.projects__link {
+  display: inline-block;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid $color-secondary;
+  border-radius: $border-radius-sm;
+  color: $color-primary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.projects__link:hover,
+.projects__link:focus-visible {
+  background-color: $color-primary;
+  color: $color-surface;
+}
+
+@include respond-to(tablet) {
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

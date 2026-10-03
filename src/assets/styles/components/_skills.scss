@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.skills {
+  background-color: $color-background;
+}
+
+.skills__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.skills__header {
+  max-width: 680px;
+}
+
+.skills__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skills__title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.skills__intro {
+  color: $color-text-light;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.skills__groups {
+  display: grid;
+  gap: $space-md;
+  max-width: 900px;
+}
+
+.skills__group {
+  padding: $space-md;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-surface;
+  box-shadow: 0 3px 10px rgb(31 58 95 / 6%);
+}
+
+.skills__group-title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: 1.1rem;
+}
+
+.skills__list {
+  display: grid;
+  gap: 0.45rem;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.skills__item {
+  color: $color-text-light;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@include respond-to(tablet) {
+  .skills__groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

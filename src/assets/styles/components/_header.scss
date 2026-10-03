@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $color-primary;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.site-header__nav {
+  @include container;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-xs;
+  padding-block: $space-sm;
+}
+
+.site-header__link {
+  padding: 0.5rem 0.75rem;
+  border-radius: $border-radius-sm;
+  color: $color-surface;
+  font-weight: 600;
+  transition: background-color $transition-base, color $transition-base;
+}
+
+.site-header__link:hover,
+.site-header__link:focus-visible {
+  background-color: $color-accent;
+  color: $color-primary;
+}
+
+@include respond-to(tablet) {
+  .site-header__nav {
+    justify-content: flex-end;
+    gap: $space-sm;
+  }
+
+  .site-header__link {
+    padding-inline: 0.75rem;
+  }
+}

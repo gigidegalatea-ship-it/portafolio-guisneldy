@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html {
+font-family: $font-family-base;
+color: $color-text;
+background-color: $color-background;
+line-height: 1.6;
+scroll-behavior: smooth;
+}
+
+body {
+min-width: 320px;
+background-color: $color-background;
+}
+
+a {
+color: $color-primary;
+text-decoration: none;
+transition: color $transition-base;
+}
+
+a:hover {
+color: $color-secondary;
+}
+
+:focus-visible {
+outline: 3px solid $color-focus;
+outline-offset: 3px;
+}
+
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+
+.container {
+@include container;
+}
+
+section {
+padding-block: $space-xl;
+scroll-margin-top: 80px;
+}

@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  border-top: 1px solid $color-border;
+  background-color: $color-primary;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-sm;
+  padding-top: $space-md;
+  padding-bottom: $space-md;
+  text-align: center;
+}
+
+.footer__text {
+  color: $color-surface;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer__link {
+  color: $color-surface;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: $color-accent;
+}
+
+@include respond-to(tablet) {
+  .footer__content {
+    flex-direction: row;
+    text-align: left;
+  }
+}

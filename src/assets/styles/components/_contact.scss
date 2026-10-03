@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.contact {
+  background-color: $color-surface;
+}
+
+.contact__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.contact__header {
+  max-width: 680px;
+}
+
+.contact__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact__title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.contact__intro {
+  color: $color-text-light;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.contact__link {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border: 1px solid $color-primary;
+  border-radius: $border-radius-sm;
+  background-color: $color-primary;
+  color: $color-surface;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact__link:hover,
+.contact__link:focus-visible {
+  border-color: $color-secondary;
+  background-color: $color-secondary;
+}

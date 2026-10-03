@@ -1,0 +1,61 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.technologies {
+  background-color: $color-background;
+}
+
+.technologies__content {
+  display: grid;
+  gap: $space-lg;
+}
+
+.technologies__header {
+  max-width: 680px;
+}
+
+.technologies__eyebrow {
+  margin-bottom: $space-xs;
+  color: $color-secondary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.technologies__title {
+  margin-bottom: $space-sm;
+  color: $color-primary;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.technologies__intro {
+  color: $color-text-light;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.technologies__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  max-width: 900px;
+}
+
+.technologies__item {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-surface;
+  color: $color-primary;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgb(31 58 95 / 6%);
+}
+
+@include respond-to(tablet) {
+  .technologies__list {
+    gap: $space-md;
+  }
+}

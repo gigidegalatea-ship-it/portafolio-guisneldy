@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding-block: $space-xl;
+  background: linear-gradient(
+    135deg,
+    $color-background 0%,
+    $color-surface 100%
+  );
+}
+
+.hero__content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+  max-width: 760px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  color: $color-secondary;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  max-width: 700px;
+  color: $color-primary;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+}
+
+.hero__description {
+  max-width: 650px;
+  color: $color-text-light;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid $color-primary;
+  border-radius: $border-radius-md;
+  background-color: $color-primary;
+  color: $color-surface;
+  font-weight: 700;
+  transition: background-color $transition-base, border-color $transition-base,
+    color $transition-base, transform $transition-base;
+}
+
+.hero__button:hover {
+  border-color: $color-secondary;
+  background-color: $color-secondary;
+  color: $color-surface;
+  transform: translateY(-2px);
+}
+
+.hero__button:focus-visible {
+  outline: 3px solid $color-focus;
+  outline-offset: 3px;
+}
+
+@include respond-to(tablet) {
+  .hero {
+    min-height: calc(100vh - 68px);
+  }
+
+  .hero__description {
+    font-size: 1.1rem;
+  }
+}
